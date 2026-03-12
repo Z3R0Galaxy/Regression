@@ -2,13 +2,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 
+value = 10
+
 hours = np.array([[1],[2],[3],[4],[5],[6]])
 pass_exam = np.array([0,0,0,1,1,1])
 
 model = LogisticRegression()
 model.fit(hours,pass_exam)
 
-print(model.predict([[1.5]])) #0 is fail and 1 is pass
+print(model.predict([[value]])) #0 is fail and 1 is pass
+prob_pass = model.predict_proba([[value]])[0][1]
+print(f"Probability of passing: {prob_pass*100:.2f}%")
 
 plt.scatter(hours, pass_exam)
 
