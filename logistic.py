@@ -25,5 +25,4 @@ plt.plot(x_range, probabilities)
 plt.title("Logistic Regression Probability Curve")
 plt.xlabel("Study Hours")
 plt.ylabel("Probability of Passing")
-
 plt.show()
